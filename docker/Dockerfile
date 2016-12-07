@@ -2,7 +2,21 @@ FROM alpine:edge
 MAINTAINER Vladimir Goshev <sunx@sunx.name>
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-	apk --no-cache add exim rspamd dovecot procmail
+	apk --no-cache add exim rspamd dovecot procmail rspamd-client && \
+	\
+	mkdir -p /var/lib/dovecot && \
+	mkdir -p /var/log/exim && chown -R exim:exim /var/log/exim && \
+	mkdir -p /run/rspamd && \
+	\
+	tar cf /etc/config.tar /etc/exim /etc/dovecot /etc/rspamd /var/lib/dovecot /var/lib/rspamd /var/log && \
+	rm -rf /etc/exim /etc/dovecot /etc/rspamd /var/lib/dovecot /var/lib/rspamd /var/log && \
+	ln -s /home/mail/etc/exim /etc/exim && \
+	ln -s /home/mail/etc/dovecot /etc/dovecot && \
+	ln -s /home/mail/etc/rspamd /etc/rspamd && \
+	ln -s /home/mail/var/lib/dovecot /var/lib/dovecot && \
+	ln -s /home/mail/var/lib/rspamd /var/lib/rspamd && \
+	ln -s /home/mail/var/log /var/log && \
+	echo Done!
 
 RUN mkdir /home/mail
 

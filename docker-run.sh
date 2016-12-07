@@ -25,8 +25,13 @@ CONFIG_FILE=`eval echo $CONFIG_FILE`
 [ ! -z "$CONTAINER_NAME" ]     && CONTAINER_NAME="--name=$CONTAINER_NAME"
 [ ! -z "$RESTART_POLICY" ]     && RESTART_POLICY="--restart=$RESTART_POLICY"
 
+# Do you need POP3 protocol?
+
 $DOCKER $DOCKER_ARGS run \
 	-v $VOLUME_PATH:/home/mail \
+	-p 993:993 -p 995:995 \
+	-p 110:110 -p 143:143 \
+	-p 25:25 -p 465:465 \
 	$CONTAINER_HOSTNAME \
 	$CONTAINER_NAME \
 	$RESTART_POLICY \
