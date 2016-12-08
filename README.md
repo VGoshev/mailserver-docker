@@ -3,7 +3,7 @@ Docker image  for Mail server, based on Alpine Linux edge, it contains:
 * [Exim](http://www.exim.org/) MTA
 * [Dovecot](http://www.dovecot.org/) IMAP and POP3 Server
 * [RSpamd](https://www.rspamd.com/) Spam filtering system
-* [Procmail](https://en.wikipedia.org/wiki/Procmail) Mail delivery arend
+* [Procmail](https://en.wikipedia.org/wiki/Procmail) Mail delivery agent
 
 ## Supported tags and respective `Dockerfile` links
 
