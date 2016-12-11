@@ -37,9 +37,14 @@ This image uses one volume with internal path `/home/mail`, it will store config
 
 I would recommend you use host directory mapping of named volume to run containers, so you will not lose your valuable data after image update and starting new container.
 
+
+### RSpamd and Redis
+
+RSpamd requires to use Redis database to its works, this image doesn't contain redis, so you need to instal one on your host or use some docker image with redis. I'd recommend to use [redis:alpine](https://hub.docker.com/_/redis/) for it.
+
 ## Issues and ToDo
 
-Default RSpamd configuration files, probably, shouldn't been put into volume, only local configuration directories should. It will, probably, fixed soon.
+Default RSpamd configuration files, probably, shouldn't been put into volume, only local configuration directories should. It will be fixed someday, probably.
 
 Procmail is no longer maintained for a long time, so, probably, this image will be switched to use different MDA in future ([maildrop](http://www.courier-mta.org/maildrop/), probably) or 2 versions of image will exists.
 
