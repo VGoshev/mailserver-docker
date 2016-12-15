@@ -7,7 +7,7 @@ Docker image  for Mail server, based on Alpine Linux edge, it contains:
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`latest`](https://github.com/VGoshev/mailserver-docker/blob/master/docker/Dockerfile) - Latest avaliable version.
+* [`latest`](https://github.com/VGoshev/mailserver-docker/blob/master/docker/Dockerfile) - Latest available version.
 
 ## Quickstart
 
