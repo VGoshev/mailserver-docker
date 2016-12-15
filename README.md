@@ -7,7 +7,7 @@ Docker image  for Mail server, based on Alpine Linux edge, it contains:
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`latest`](https://github.com/SunAngel/mailserver-docker/blob/master/docker/Dockerfile) - Latest avaliable version.
+* [`latest`](https://github.com/VGoshev/mailserver-docker/blob/master/docker/Dockerfile) - Latest avaliable version.
 
 ## Quickstart
 
@@ -50,4 +50,4 @@ Procmail is no longer maintained for a long time, so, probably, this image will 
 
 ## License
 
-This Dockerfile and scripts are released under [MIT License](https://github.com/SunAngel/mailserver-docker/blob/master/LICENSE).
+This Dockerfile and scripts are released under [MIT License](https://github.com/VGoshev/mailserver-docker/blob/master/LICENSE).
