@@ -20,6 +20,9 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
 	ln -s /home/mail/var/log /var/log && \
 	echo Done!
 
+#Make exim lib dir, so exim won't print warning about it
+Run mkdir /usr/lib/exim
+
 RUN mkdir /home/mail
 
 COPY docker-run-root.sh /bin/docker-run-root
