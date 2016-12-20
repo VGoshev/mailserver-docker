@@ -1,7 +1,9 @@
 FROM alpine:edge
 MAINTAINER Vladimir Goshev <sunx@sunx.name>
 
+#We have to upgrade musl, or rspamd will not work =(
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
+	apk add --no-cache --upgrade musl musl-utils && \
 	apk --no-cache add exim rspamd dovecot procmail rspamd-client && \
 	\
 	mkdir -p /var/lib/dovecot && \
